@@ -23,11 +23,12 @@ game_screen_open = False
 
 
 def main():
-    global running, game_screen_open
     """
     Main method.
     View start screen
     """
+    global running, game_screen_open
+
     pygame.init()
     pygame.display.set_caption(CAPTIONS["Start"])
     pygame.display.set_icon(IMAGES["Icon"])

@@ -11,7 +11,8 @@ class Entity(pygame.sprite.Sprite):
     Describes all the objects of the game
     """
 
-    def __init__(self, size, pos, image):
+    def __init__(self, size, pos, image, *groups):
+        super().__init__(*groups)
         self.size = size
         self.pos = pos
         self.image = image
