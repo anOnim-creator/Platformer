@@ -5,7 +5,6 @@ Contains constant values
 """
 import pygame
 import sys
-
 import start
 from tools import create_image as create
 
@@ -14,7 +13,7 @@ COLORS = {"Background": pygame.Color('#231445'), "Player": pygame.Color('#8A6DCE
 
 CAPTIONS = {"Start": 'Platformer | Start screen',
             "Game": 'Platformer | Game screen. Score: ',
-            "Info": 'Platformer | Information'}
+            "New Game": 'Platformer | Create new game'}
 
 SIZES = {"Player": (30, 30), "Platform": (100, 20), "Stair": (20, 100), "Icon": (20, 20), "Screen": (700, 700)}
 

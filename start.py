@@ -4,22 +4,28 @@ Open start screen
 """
 import pygame
 import sys
-
 import game
-import info
 from tools import Custom_Group
 from button import Button
 from main import COLORS, CAPTIONS, IMAGES, SIZES, FPS
 
 PLAY_BUTTON_TEXT = 'Play'
-PLAY_BUTTON_CORDS = (SIZES["Screen"][0] // 10, SIZES["Screen"][1] // 10)
+PLAY_BUTTON_CORDS = (SIZES["Screen"][0] // 10 * 4 + (SIZES["Screen"][0] // 50), SIZES["Screen"][1] // 10 * 4)
 
-INFO_BUTTON_TEXT = "Info"
-INFO_BUTTON_CORDS = (SIZES["Screen"][0] // 10, SIZES["Screen"][1] // 10 * 2)
+EXIT_BUTTON_TEXT = 'Exit'
+EXIT_BUTTON_CORDS = (SIZES["Screen"][0] - (SIZES["Screen"][0] // 10), SIZES["Screen"][1] - (SIZES["Screen"][1] // 10))
 
 FONT_SIZE = 70
 running = True
 game_screen_open = False
+
+
+def terminate():
+    """
+    Terminate method.
+    Exit from program
+    """
+    sys.exit(pygame.quit())
 
 
 def main():
@@ -35,8 +41,8 @@ def main():
     screen = pygame.display.set_mode(SIZES["Screen"])
 
     buttons = Custom_Group()
-    buttons.add(Button(PLAY_BUTTON_TEXT, COLORS["Stair"], game.main, FONT_SIZE, PLAY_BUTTON_CORDS))
-    buttons.add(Button(INFO_BUTTON_TEXT, COLORS["Stair"], info.main, FONT_SIZE // 2, INFO_BUTTON_CORDS))
+    buttons.add(Button(PLAY_BUTTON_TEXT, COLORS["Player"], game.main, FONT_SIZE, PLAY_BUTTON_CORDS))
+    buttons.add(Button(EXIT_BUTTON_TEXT, COLORS["Stair"], terminate, FONT_SIZE // 3, EXIT_BUTTON_CORDS))
 
     clock = pygame.time.Clock()
 
